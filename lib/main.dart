@@ -24,4 +24,3 @@ class MyApp extends StatelessWidget {
 }
 
 
-// https://dribbble.com/shots/20666320-Process-animation-for-mobile-app
