@@ -92,7 +92,8 @@ class CustomSearchDelegate extends SearchDelegate<String> {
     return IconButton(
       icon: const Icon(Icons.arrow_back),
       onPressed: () {
-        close(context, "");
+        // close(context, "");
+        Navigator.of(context).pop();
       },
     );
   }

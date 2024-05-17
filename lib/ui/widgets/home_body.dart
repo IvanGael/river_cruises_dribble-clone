@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:river_cruises_dribble/constants/images.dart';
+import 'package:river_cruises_dribble/models/cruise.dart';
+
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../constants/colors.dart';
+import '../map_screen.dart';
 import 'custom_search_delegate.dart';
 import 'custom_tab.dart';
 
@@ -17,6 +21,30 @@ class _HomeBodyState extends State<HomeBody>
   int selectedCategIndex = 0;
 
   List<String> categories = ['All areas', 'Weekend', 'Family', 'Dance'];
+
+  List<Cruise> cruises = [
+    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise1.jpg"),
+    Cruise(categ: 'Weekend', imageAsset: "assets/images/cruise2.jpg"),
+    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise3.jpg"),
+    Cruise(categ: 'Dance', imageAsset: "assets/images/cruise4.jpg"),
+    Cruise(categ: 'Family', imageAsset: "assets/images/cruise5.jpg"),
+    Cruise(categ: 'Family', imageAsset: "assets/images/cruise6.jpg"),
+    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise7.jpg"),
+    Cruise(categ: 'Dance', imageAsset: "assets/images/cruise8.jpg"),
+    Cruise(categ: 'Dance', imageAsset: "assets/images/cruise9.jpg"),
+    Cruise(categ: 'Dance', imageAsset: "assets/images/cruise10.jpg"),
+    Cruise(categ: 'Weekend', imageAsset: "assets/images/cruise11.jpg"),
+    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise12.jpg"),
+    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise13.jpg"),
+    Cruise(categ: 'Weekend', imageAsset: "assets/images/cruise14.jpg"),
+    Cruise(categ: 'Family', imageAsset: "assets/images/cruise15.jpg"),
+    Cruise(categ: 'Dance', imageAsset: "assets/images/cruise16.jpg"),
+    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise17.jpg"),
+    Cruise(categ: 'Family', imageAsset: "assets/images/cruise18.jpg"),
+    Cruise(categ: 'Family', imageAsset: "assets/images/cruise19.jpg"),
+    Cruise(categ: 'Weekend', imageAsset: "assets/images/cruise20.jpg"),
+    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise21.jpg")
+  ];
 
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -57,6 +85,11 @@ class _HomeBodyState extends State<HomeBody>
         _anyWeekController.text = "${picked.toLocal()}".split(' ')[0];
       });
     }
+  }
+
+  List<Cruise> getCruisesByCateg() {
+    String selectedCateg = categories[selectedCategIndex];
+    return cruises.where((cruise) => cruise.categ == selectedCateg).toList();
   }
 
   @override
@@ -312,7 +345,12 @@ class _HomeBodyState extends State<HomeBody>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MapScreen()));
+                    },
                     child: Row(
                       children: [
                         Icon(Icons.map, color: AppColors.primary),
@@ -399,6 +437,22 @@ class _HomeBodyState extends State<HomeBody>
             },
           ),
         ),
+        const SizedBox(
+          height: 20,
+        ),
+        StaggeredGrid.count(
+          crossAxisCount: 2,
+          mainAxisSpacing: 4,
+          crossAxisSpacing: 4,
+          children: List.generate(
+            getCruisesByCateg().length,
+            (index) => GestureDetector(
+              onTap: () {},
+              child: Image.asset(getCruisesByCateg()[index].imageAsset,
+                  fit: BoxFit.cover),
+            ),
+          ),
+        )
       ],
     );
   }

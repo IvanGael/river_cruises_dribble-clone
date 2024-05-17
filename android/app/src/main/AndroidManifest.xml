@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- For Google map -->
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
     <application
         android:label="river_cruises_dribble"
         android:name="${applicationName}"
@@ -29,5 +32,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <!-- For Google map -->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDp0YPClQ7N4h2sOzuzChSmMWajpUC0OIo"/>
     </application>
 </manifest>
