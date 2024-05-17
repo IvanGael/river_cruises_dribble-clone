@@ -23,31 +23,32 @@ class _HomeBodyState extends State<HomeBody>
   List<String> categories = ['All areas', 'Weekend', 'Family', 'Dance'];
 
   List<Cruise> cruises = [
-    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise1.jpg"),
-    Cruise(categ: 'Weekend', imageAsset: "assets/images/cruise2.jpg"),
-    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise3.jpg"),
-    Cruise(categ: 'Dance', imageAsset: "assets/images/cruise4.jpg"),
-    Cruise(categ: 'Family', imageAsset: "assets/images/cruise5.jpg"),
-    Cruise(categ: 'Family', imageAsset: "assets/images/cruise6.jpg"),
-    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise7.jpg"),
-    Cruise(categ: 'Dance', imageAsset: "assets/images/cruise8.jpg"),
-    Cruise(categ: 'Dance', imageAsset: "assets/images/cruise9.jpg"),
-    Cruise(categ: 'Dance', imageAsset: "assets/images/cruise10.jpg"),
-    Cruise(categ: 'Weekend', imageAsset: "assets/images/cruise11.jpg"),
+    Cruise(categ: 'All areas', imageAsset: AppImages.cruise1),
+    Cruise(categ: 'Weekend', imageAsset: AppImages.cruise2),
+    Cruise(categ: 'All areas', imageAsset: AppImages.cruise3),
+    Cruise(categ: 'Dance', imageAsset: AppImages.cruise4),
+    Cruise(categ: 'Family', imageAsset: AppImages.cruise5),
+    Cruise(categ: 'Family', imageAsset: AppImages.cruise6),
+    Cruise(categ: 'All areas', imageAsset: AppImages.cruise7),
+    Cruise(categ: 'Dance', imageAsset: AppImages.cruise8),
+    Cruise(categ: 'Dance', imageAsset: AppImages.cruise9),
+    Cruise(categ: 'Dance', imageAsset: AppImages.cruise10),
+    Cruise(categ: 'Weekend', imageAsset: AppImages.cruise11),
     Cruise(categ: 'All areas', imageAsset: "assets/images/cruise12.jpg"),
-    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise13.jpg"),
-    Cruise(categ: 'Weekend', imageAsset: "assets/images/cruise14.jpg"),
-    Cruise(categ: 'Family', imageAsset: "assets/images/cruise15.jpg"),
-    Cruise(categ: 'Dance', imageAsset: "assets/images/cruise16.jpg"),
-    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise17.jpg"),
-    Cruise(categ: 'Family', imageAsset: "assets/images/cruise18.jpg"),
-    Cruise(categ: 'Family', imageAsset: "assets/images/cruise19.jpg"),
-    Cruise(categ: 'Weekend', imageAsset: "assets/images/cruise20.jpg"),
-    Cruise(categ: 'All areas', imageAsset: "assets/images/cruise21.jpg")
+    Cruise(categ: 'All areas', imageAsset: AppImages.cruise13),
+    Cruise(categ: 'Weekend', imageAsset: AppImages.cruise14),
+    Cruise(categ: 'Family', imageAsset: AppImages.cruise15),
+    Cruise(categ: 'Dance', imageAsset: AppImages.cruise16),
+    Cruise(categ: 'All areas', imageAsset: AppImages.cruise17),
+    Cruise(categ: 'Family', imageAsset: AppImages.cruise18),
+    Cruise(categ: 'Family', imageAsset: AppImages.cruise19),
+    Cruise(categ: 'Weekend', imageAsset: AppImages.cruise20),
+    Cruise(categ: 'All areas', imageAsset: AppImages.cruise21)
   ];
 
   late AnimationController _controller;
   late Animation<double> _animation;
+
 
   @override
   void initState() {
