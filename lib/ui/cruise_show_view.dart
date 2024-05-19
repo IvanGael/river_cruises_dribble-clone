@@ -58,6 +58,7 @@ class CruiseShowView extends StatefulWidget {
 
 class _CruiseShowViewState extends State<CruiseShowView> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
+  bool _isFav = false;
 
   @override
   void initState() {
@@ -87,6 +88,28 @@ class _CruiseShowViewState extends State<CruiseShowView> with SingleTickerProvid
               child: widget.child,
             ),
           ),
+          // Positioned(
+          //   top: 30,
+          //   right: 20,
+          //   child: GestureDetector(
+          //     onTap: (){
+          //       setState(() {
+          //         _isFav = !_isFav;
+          //       });
+          //     },
+          //     child: Icon(
+          //     Icons.favorite, 
+          //     size: 40, 
+          //     color: _isFav == true ? Colors.red.shade400 :  Colors.white,
+          //     shadows: const [
+          //       Shadow(color: Colors.white38, offset: Offset(-3, 3), blurRadius: 5),
+          //       Shadow(color: Colors.white38, offset: Offset(-3, -3), blurRadius: 5),
+          //       Shadow(color: Colors.white38, offset: Offset(4, 4), blurRadius: 5),
+          //       Shadow(color: Colors.white38, offset: Offset(4, -4), blurRadius: 5)
+          //     ],
+          //   ),
+          //   )
+          // )
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,

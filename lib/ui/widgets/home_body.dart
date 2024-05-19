@@ -80,7 +80,7 @@ class _HomeBodyState extends State<HomeBody>
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(2000),
-      lastDate: DateTime(2101),
+      lastDate: DateTime(2101)
     );
     if (picked != null && picked != DateTime.now()) {
       setState(() {
