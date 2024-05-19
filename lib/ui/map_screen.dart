@@ -45,7 +45,7 @@ class _MapScreenState extends State<MapScreen> {
     return Scaffold(
       body: _currentP == null
           ? const Center(
-              child: CircularProgressIndicator(strokeWidth: 8,),
+              child: CircularProgressIndicator(strokeWidth: 7,),
             )
           : GoogleMap(
               onMapCreated: ((GoogleMapController controller) =>
