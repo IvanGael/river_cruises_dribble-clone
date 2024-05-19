@@ -5,6 +5,7 @@ import 'package:river_cruises_dribble/models/cruise.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../constants/colors.dart';
+import '../cruise_show_view.dart';
 import '../map_screen.dart';
 import 'custom_search_delegate.dart';
 import 'custom_tab.dart';
@@ -441,17 +442,46 @@ class _HomeBodyState extends State<HomeBody>
         const SizedBox(
           height: 20,
         ),
-        StaggeredGrid.count(
-          crossAxisCount: 2,
-          mainAxisSpacing: 4,
-          crossAxisSpacing: 4,
-          children: List.generate(
-            getCruisesByCateg().length,
-            (index) => GestureDetector(
-              onTap: () {},
-              child: Image.asset(getCruisesByCateg()[index].imageAsset,
-                  fit: BoxFit.cover),
-            ),
+        // StaggeredGrid.count(
+        //   crossAxisCount: 2,
+        //   mainAxisSpacing: 4,
+        //   crossAxisSpacing: 4,
+        //   children: List.generate(
+        //     getCruisesByCateg().length,
+        //     (index) => GestureDetector(
+        //       onTap: () {},
+        //       child: Image.asset(getCruisesByCateg()[index].imageAsset,
+        //           fit: BoxFit.cover),
+        //     ),
+        //   ),
+        // ),
+        SizedBox(
+          height: 200,
+          child: MasonryGridView.count(
+            crossAxisCount: 2, 
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
+            itemCount: getCruisesByCateg().length,
+            itemBuilder: (context, index){
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) => CruiseShowView(
+                        index: index, 
+                        child: Image.asset(
+                          getCruisesByCateg()[index].imageAsset,
+                          fit: BoxFit.cover
+                        )
+                      )
+                    )
+                  );
+                },
+                child: Image.asset(getCruisesByCateg()[index].imageAsset,
+                    fit: BoxFit.cover),
+              );
+            }
           ),
         )
       ],

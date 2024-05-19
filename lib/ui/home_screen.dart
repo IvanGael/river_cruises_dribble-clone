@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:river_cruises_dribble/constants/images.dart';
+import 'package:river_cruises_dribble/ui/help_view.dart';
+import 'package:river_cruises_dribble/ui/profile_view.dart';
+import 'package:river_cruises_dribble/ui/tickets_view.dart';
 
 import '../constants/colors.dart';
+import 'favorite_view.dart';
 import 'widgets/home_body.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,6 +30,14 @@ class _HomeScreenState extends State<HomeScreen> {
   double _glassesLeftPosition = 130.0;
 
   int _selectedBottomNavigatorItemIndex = 0;
+
+  List<Widget> views = [
+    const HomeBody(),
+    const FavoriteView(),
+    const TicketsView(),
+    const HelpView(),
+    const ProfileView()
+  ];
   
 
   @override
@@ -155,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverList(
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
-                  return const HomeBody();
+                  return views[_selectedBottomNavigatorItemIndex];
                 },
                 childCount: 1,
               ),
