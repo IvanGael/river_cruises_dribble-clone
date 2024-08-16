@@ -348,10 +348,10 @@ class _HomeBodyState extends State<HomeBody>
                 children: [
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const MapScreen()));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => const MapScreen()));
                     },
                     child: Row(
                       children: [
