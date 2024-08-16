@@ -1,10 +1,18 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:river_cruises_dribble/constants/colors.dart';
 
 import 'ui/home_screen.dart';
 
+import 'package:device_preview/device_preview.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      builder: (context) => const MyApp()
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +22,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'River cruise',
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       theme: ThemeData(
         colorScheme: ColorScheme.light(
           primary: AppColors.primary
