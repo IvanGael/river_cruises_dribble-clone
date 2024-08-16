@@ -33,10 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> views = [
     const HomeBody(),
-    const SizedBox(),
-    const SizedBox(),
-    const SizedBox(),
-    const SizedBox()
+    const HomeBody(),
+    const HomeBody(),
+    const HomeBody(),
+    const HomeBody()
     // const FavoriteView(),
     // const TicketsView(),
     // const HelpView(),
