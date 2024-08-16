@@ -1,8 +1,12 @@
 River cruise tours booking mobile app
 
+<!--
 <div align="center">
 <img src="https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/river_cruise_demo.gif" alt="Demo" />
 </div>
+ -->
+
+https://github.com/user-attachments/assets/5546e4aa-b054-4dc1-ab76-10fed7518e8e
 
 <!-- ![Demo](https://storage.googleapis.com/buildship-vos7yw-europe-west1/uploaded-files/river_cruise_demo.gif) -->
 
