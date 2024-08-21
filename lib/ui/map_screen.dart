@@ -16,7 +16,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  String GOOGLE_MAPS_API_KEY = "AIzaSyDp0YPClQ7N4h2sOzuzChSmMWajpUC0OIo";
+  String GOOGLE_MAPS_API_KEY = "API_KEY";
   final Location _locationController = Location();
 
   final Completer<GoogleMapController> _mapController =
